@@ -2,13 +2,7 @@ package iLoveMusic.verwaltung.benutzerVerwaltung;
 
 import java.util.Date;
 
-public interface BenutzerVerwaltungInterface {
-
-	/**
-	 * Liste aller registrierten Benutzer.
-	 */
-	BenutzerListe benutzerListe<Customer>;
-	
+public interface BenutzerVerwaltungInterface {	
 	
 	/**
 	 * Methode zum registrieren neuer Benutzer.
@@ -52,5 +46,17 @@ public interface BenutzerVerwaltungInterface {
 	 * @return <code>true</code>, wenn der Benutzer erfolgreich geloescht wurde.
 	 */
 	public abstract boolean benutzerLoeschen(Customer benutzer);
+	
+	/**
+	 * Liefert die Liste der registrierten Benutzer.
+	 * @return Liste der registrierten Benutzer als LinkedList.
+	 */
+	public abstract BenutzerListe<Customer> getBenutzerListe();
+	
+	/**
+	 * Setzt eine neue Benutzerliste.
+	 * @param benutzerListe Die neue Liste aller registrierten Benutzer.
+	 */
+	public abstract void setBenutzerListe(BenutzerListe<Customer> benutzerListe);
 	
 }
