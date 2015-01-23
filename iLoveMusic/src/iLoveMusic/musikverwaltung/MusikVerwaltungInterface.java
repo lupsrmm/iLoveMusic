@@ -1,4 +1,4 @@
-package iLoveMusic.verwaltung.musikVerwaltung;
+package iLoveMusic.musikverwaltung;
 
 public interface MusikVerwaltungInterface {
 	

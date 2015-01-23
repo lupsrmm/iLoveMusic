@@ -1,4 +1,6 @@
-package iLoveMusic.verwaltung.benutzerVerwaltung;
+package iLoveMusic.benutzerverwaltung;
+
+import iLoveMusic.musikverwaltung.Titel;
 
 public interface KontoVerwaltungInterface {
 	

@@ -1,4 +1,4 @@
-package iLoveMusic.verwaltung.benutzerVerwaltung;
+package iLoveMusic.benutzerverwaltung;
 
 import java.util.Date;
 
