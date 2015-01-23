@@ -42,9 +42,9 @@ public interface MusikVerwaltungInterface {
 	 */
 	public abstract boolean titelEntfernen(Titel titel);
 	
-	public abstract Angebot<Titel> getAngebot();
+	public abstract Angebot getAngebot();
 	
-	public abstract void setAngebot(Angebot<Titel> angebot);
+	public abstract void setAngebot(Angebot angebot);
 	
 	
 
