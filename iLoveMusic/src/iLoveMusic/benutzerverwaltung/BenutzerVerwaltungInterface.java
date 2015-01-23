@@ -51,12 +51,12 @@ public interface BenutzerVerwaltungInterface {
 	 * Liefert die Liste der registrierten Benutzer.
 	 * @return Liste der registrierten Benutzer als LinkedList.
 	 */
-	public abstract BenutzerListe<Customer> getBenutzerListe();
+	public abstract BenutzerListe getBenutzerListe();
 	
 	/**
 	 * Setzt eine neue Benutzerliste.
 	 * @param benutzerListe Die neue Liste aller registrierten Benutzer.
 	 */
-	public abstract void setBenutzerListe(BenutzerListe<Customer> benutzerListe);
+	public abstract void setBenutzerListe(BenutzerListe benutzerListe);
 	
 }
