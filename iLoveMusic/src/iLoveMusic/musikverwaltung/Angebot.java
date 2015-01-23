@@ -27,8 +27,8 @@ public class Angebot extends LinkedList<Titel> {
 		String[][] titelInterpret = new String[this.size()][2];
 		int i = 0;
 		for(Titel tmp : this){
-			titelInterpret[i][1] = tmp.getName();
-			titelInterpret[i][2] = tmp.getInterpret();
+			titelInterpret[i][0] = tmp.getName();
+			titelInterpret[i][1] = tmp.getInterpret();
 			i++;
 		}
 		return titelInterpret;
