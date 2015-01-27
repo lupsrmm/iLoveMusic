@@ -1,5 +1,10 @@
 package iLoveMusic.steuerung;
 
+import iLoveMusic.benutzerverwaltung.BenutzerVerwaltung;
+import iLoveMusic.benutzerverwaltung.Customer;
+import iLoveMusic.benutzerverwaltung.KontoVerwaltung;
+import iLoveMusic.musikverwaltung.MusikVerwaltung;
+
 public interface SteuerungInterface {
 	
 	/**
