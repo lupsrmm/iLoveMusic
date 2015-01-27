@@ -14,6 +14,7 @@ public class BenutzerVerwaltung implements BenutzerVerwaltungInterface{
 	public boolean register(String name, String eMailAdresse, Date geburtstag,String passwort){
 		//for-schleife einrichten zum Durchsuchen der Benutzerliste, ob eMail schon vergeben
 		Customer benutzer = new Customer(name, eMailAdresse, geburtstag, passwort);
+		return benutzerListe.add(benutzer);
 		
 	}
 	
@@ -41,11 +42,12 @@ public class BenutzerVerwaltung implements BenutzerVerwaltungInterface{
 	@Override
 	public boolean benutzerNamenAendern(Customer benutzer, String neuerBenutzerName){
 		benutzer.setName(neuerBenutzerName);
+		return true;
 	}
 	
 	@Override
 	public boolean benutzerLoeschen(Customer benutzer){
-		benutzerListe.remove(benutzer);
+		return benutzerListe.remove(benutzer);
 		
 	}
 	
