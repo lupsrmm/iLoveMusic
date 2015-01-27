@@ -4,11 +4,11 @@ public interface SteuerungInterface {
 	
 	/**
 	 * Methode zum Einloggen.
-	 * @param eMailAdresse Die E-Mailadresse des Benutzers, der sich einloggen will.
+	 * @param benutzerName Der Benutzername des Benutzers, der sich einloggen will.
 	 * @param passwort Das Passwort des Benutzers, der sich einloggen will.
 	 * @return <code>true</code>, wenn der Login erfolgreich war.
 	 */
-	public abstract boolean login(String eMailAdresse, String passwort);
+	public abstract boolean login(String benutzerName, String passwort);
 	
 	/**
 	 * Methode zum ausloggen des eingeloggten Benutzers.
