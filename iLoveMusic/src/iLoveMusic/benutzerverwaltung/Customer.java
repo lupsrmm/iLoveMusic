@@ -1,6 +1,4 @@
 package iLoveMusic.benutzerverwaltung;
-import iLoveMusic.musikverwaltung.Titel;
-
 import java.util.Date;
 
 /**
@@ -16,7 +14,7 @@ public class Customer {
 	private Date geb;
 	private String passwort;
 	private Warenkorb korb;
-	private KaufUebersicht <Titel> uebersicht;
+	private KaufUebersicht uebersicht;
 	private double guthaben;
 	// private LinkedList <Track> Playlist;
 	
@@ -28,7 +26,7 @@ public class Customer {
 		this.passwort = pw;
 		this.guthaben = 0;
 		this.korb = new Warenkorb();
-		this.uebersicht = new KaufUebersicht<Titel>();
+		this.uebersicht = new KaufUebersicht();
 	}
 	
 	// Getter
@@ -52,7 +50,7 @@ public class Customer {
 		return korb;
 	}
 	
-	public KaufUebersicht<Titel> getKaufuebersicht(){
+	public KaufUebersicht getKaufuebersicht(){
 		return uebersicht;
 	}
 	

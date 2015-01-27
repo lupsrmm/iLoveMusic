@@ -2,6 +2,7 @@ package iLoveMusic.benutzerverwaltung;
 import iLoveMusic.musikverwaltung.Titel;
 
 
+
 /**
  * @author Carla Schreiber
  * @date 21.01.2015
@@ -9,6 +10,7 @@ import iLoveMusic.musikverwaltung.Titel;
  */
 import java.util.LinkedList;
 
+@SuppressWarnings("serial")
 public class KaufUebersicht extends LinkedList<Titel>{
 	// Datenelemente
 			
