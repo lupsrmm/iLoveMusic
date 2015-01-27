@@ -1,4 +1,7 @@
 package iLoveMusic.benutzerverwaltung;
+import iLoveMusic.musikverwaltung.Titel;
+
+
 /**
  * @author Carla Schreiber
  * @date 21.01.2015
@@ -6,37 +9,34 @@ package iLoveMusic.benutzerverwaltung;
  */
 import java.util.LinkedList;
 
-public class KaufUebersicht<Titel>{
+public class KaufUebersicht extends LinkedList<Titel>{
 	// Datenelemente
-	private LinkedList<Titel> uebersicht= new LinkedList<Titel>();
 			
 	// Konstruktor
 	public KaufUebersicht(){
-				
-			}
-			
-	// Getter 
-	public LinkedList<Titel> getWarenkorb(){
-		return uebersicht;
+		
 	}
 	
 	// Methoden
 	public String[] TitelListe(){
-		int n = uebersicht.size();
+		int n = this.size();
 		String [] titelliste = new String[n];
-		for (int i = 0; i < n; i++){
-			titelliste[i] = (((iLoveMusic.musikverwaltung.Titel) uebersicht.get(i)).getName());
+		int i = 0;
+		for (Titel tmp : this){
+			titelliste[i] = tmp.getName();
+			i++;
 		}
 		return titelliste;
 	}
 
-	public String[][] TitelInterpretListe(){
-		int n = uebersicht.size();
-		String [][] titelliste = new String[n][2];
-		for (int i = 0; i < n; i++){
-			titelliste[i][1] = (((iLoveMusic.musikverwaltung.Titel) uebersicht.get(i)).getName());
-			titelliste[i][2] = (((iLoveMusic.musikverwaltung.Titel) uebersicht.get(i)).getInterpret());
+	public String[][] titelInterpretArray(){
+		String[][] titelInterpret = new String[this.size()][2];
+		int i = 0;
+		for(Titel tmp : this){
+			titelInterpret[i][0] = tmp.getName();
+			titelInterpret[i][1] = tmp.getInterpret();
+			i++;
 		}
-		return titelliste;
+		return titelInterpret;
 	}
 }

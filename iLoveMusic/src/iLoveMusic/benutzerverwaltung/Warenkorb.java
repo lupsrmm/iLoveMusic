@@ -5,29 +5,25 @@ package iLoveMusic.benutzerverwaltung;
  *
  */
 
+import iLoveMusic.musikverwaltung.Titel;
+
 import java.util.LinkedList;
 
-public class Warenkorb<Titel> {
-		// Datenelemente
-		private LinkedList<Titel> korb= new LinkedList<Titel>();
+@SuppressWarnings("serial")
+public class Warenkorb extends LinkedList<Titel> {
 		
 		// Konstruktor
 		Warenkorb(){
 			
 		}
 		
-		// Getter 
-		public LinkedList<Titel> getWarenkorb(){
-			return korb;
-		}
-		
 		// Methoden
-		public void berechnePreis(){
-			int n = korb.size();
+		public double berechnePreis(){
 			double gesamtpreis = 0;
-			for (int i = 0; i < n; i++){
-				gesamtpreis = gesamtpreis + (((iLoveMusic.musikverwaltung.Titel) korb.get(i)).getPreis());
+			for (Titel tmp : this){
+				gesamtpreis = gesamtpreis +  tmp.getPreis();
 			}
+			return gesamtpreis;
 		}
 		
 		

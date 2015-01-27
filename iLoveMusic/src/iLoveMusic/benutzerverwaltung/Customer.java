@@ -15,7 +15,7 @@ public class Customer {
 	private String eMailAdresse;
 	private Date geb;
 	private String passwort;
-	private Warenkorb<Titel> korb;
+	private Warenkorb korb;
 	private KaufUebersicht <Titel> uebersicht;
 	private double guthaben;
 	// private LinkedList <Track> Playlist;
@@ -27,7 +27,7 @@ public class Customer {
 		this.geb = geb;
 		this.passwort = pw;
 		this.guthaben = 0;
-		this.korb = new Warenkorb<Titel>();
+		this.korb = new Warenkorb();
 		this.uebersicht = new KaufUebersicht<Titel>();
 	}
 	
@@ -48,7 +48,7 @@ public class Customer {
 		return passwort;
 	}
 	
-	public Warenkorb<Titel> getWarenkorb(){
+	public Warenkorb getWarenkorb(){
 		return korb;
 	}
 	
