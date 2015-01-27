@@ -12,7 +12,7 @@ public class Customer {
 	
 	// Datenelemente
 	private String name;
-	private String email;
+	private String eMailAdresse;
 	private Date geb;
 	private String passwort;
 	private Warenkorb<Titel> korb;
@@ -21,9 +21,9 @@ public class Customer {
 	// private LinkedList <Track> Playlist;
 	
 	// Konstruktor
-	Customer(String n, String email, Date geb, String pw){
+	Customer(String n, String eMailAdresse, Date geb, String pw){
 		this.name = n;
-		this.email = email;
+		this.eMailAdresse = eMailAdresse;
 		this.geb = geb;
 		this.passwort = pw;
 		this.guthaben = 0;
@@ -37,7 +37,7 @@ public class Customer {
 	}
 	
 	public String getEMail(){
-		return email;
+		return eMailAdresse;
 	}
 	
 	public Date getGeburtsdatum(){
@@ -67,8 +67,8 @@ public class Customer {
 		this.name = newName;
 	}
 	
-	public void setEMail(String newEmail){
-		this.email = newEmail;
+	public void setEMailAdresse(String newEmailAdresse){
+		this.eMailAdresse = newEmailAdresse;
 	}
 	
 	public void setGeburtsdatum(Date newGeb){

@@ -11,13 +11,9 @@ public class BenutzerVerwaltung {
 	
 	//Methoden
 	public boolean register(String name, String eMailAdresse, Date geburtstag,String passwort){
-		 Customer benutzer;
 		//for-schleife einrichten zum Durchsuchen der Benutzerliste, ob eMail schon vergeben
-		benutzer.name = name;
-		benutzer.eMailAdresse = eMailAdresse;
-		benutzer.geburtstag= geburtstag;
-		benutzer.passwort = passwort;
-		benutzerListe.add(benutzer);
+		Customer benutzer = new Customer(name, eMailAdresse, geburtstag, passwort);
+		
 	}
 	
 	public boolean eMailAdresseAendern(Customer benutzer, String altesPasswort, String neueEmailAdresse){
