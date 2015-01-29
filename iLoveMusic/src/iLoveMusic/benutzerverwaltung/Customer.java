@@ -24,7 +24,7 @@ public Customer(String n, String eMailAdresse, Date geb, String pw){
 		this.eMailAdresse = eMailAdresse;
 		this.geb = geb;
 		this.passwort = pw;
-		this.guthaben = 0;
+		this.guthaben = 0d;
 		this.korb = new Warenkorb();
 		this.uebersicht = new KaufUebersicht();
 	}
@@ -50,7 +50,7 @@ public Customer(String n, String eMailAdresse, Date geb, String pw){
 		return korb;
 	}
 	
-	public KaufUebersicht getKaufuebersicht(){
+	public KaufUebersicht getKaufUebersicht(){
 		return uebersicht;
 	}
 	
@@ -75,6 +75,10 @@ public Customer(String n, String eMailAdresse, Date geb, String pw){
 	
 	public void setPasswort(String newPasswort){
 		this.passwort = newPasswort;
+	}
+	
+	public void setWarenkorb(Warenkorb warenkorb){
+		this.korb = warenkorb;
 	}
 	
 	public void setGuthaben(double newGuthaben){

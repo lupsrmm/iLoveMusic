@@ -28,8 +28,9 @@ public class KontoVerwaltung implements KontoVerwaltungInterface{
 	@Override
 	public boolean kaufGutschreiben(Customer benutzer){
 		for (Titel tmp : benutzer.getWarenkorb()){
-			benutzer.getKaufuebersicht().add(tmp);
+			benutzer.getKaufUebersicht().add(tmp);
 		}
+		benutzer.setWarenkorb(new Warenkorb());
 		return true;
 	}	
 }
