@@ -19,7 +19,7 @@ public class Customer {
 	// private LinkedList <Track> Playlist;
 	
 	// Konstruktor
-	Customer(String n, String eMailAdresse, Date geb, String pw){
+public Customer(String n, String eMailAdresse, Date geb, String pw){
 		this.name = n;
 		this.eMailAdresse = eMailAdresse;
 		this.geb = geb;
