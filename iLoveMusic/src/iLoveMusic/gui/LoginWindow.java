@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
+import javax.swing.JRootPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
@@ -96,6 +97,9 @@ public class LoginWindow extends JFrame implements ActionListener {
 		loginButton.addActionListener(this);
 		loginButton.setAlignmentX(CENTER_ALIGNMENT);
 		buttonPanel.add(loginButton);
+		
+		JRootPane rootPane = this.getRootPane();
+	    rootPane.setDefaultButton(loginButton);
 		
 		buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 		
