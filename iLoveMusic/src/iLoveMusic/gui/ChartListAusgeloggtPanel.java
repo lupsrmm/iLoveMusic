@@ -1,10 +1,13 @@
 package iLoveMusic.gui;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import iLoveMusic.musikverwaltung.Track;
 import iLoveMusic.steuerung.Steuerung;
 
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -28,12 +31,18 @@ public class ChartListAusgeloggtPanel extends JPanel {
 		
 		for (int i = 0; i < tracks.length; ++i) {
 			JPanel buttonPanel = new JPanel();
+			buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+			buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+			
 			JTextArea trackText = new JTextArea();
+			trackText.setBackground(this.getBackground());
 			trackText.setText(tracks[i].getName() + ", von " + tracks[i].getInterpret());
 			buttonPanel.add(trackText);
 			
 			JButton empfehlenButton = new JButton("Empfehlen");
 			buttonPanel.add(empfehlenButton);
+			
+			buttonPanel.add(Box.createRigidArea(new Dimension(114, 0)));
 			contentPanel.add(buttonPanel);
 		}
 		

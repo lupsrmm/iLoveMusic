@@ -4,10 +4,13 @@ import iLoveMusic.benutzerverwaltung.Customer;
 import iLoveMusic.musikverwaltung.Track;
 import iLoveMusic.steuerung.Steuerung;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -26,37 +29,42 @@ public class ChartListEingeloggtPanel extends JPanel {
 		steuerung.getMusikVerwaltung().getTracks().toArray(tracks);
 		
 		JPanel contentPanel = new JPanel();
-		contentPanel.setLayout(new GridLayout(tracks.length, 3, 0, 0));
+		contentPanel.setLayout(new GridLayout(tracks.length, 1, 0, 0));
 		contentPanel.setAutoscrolls(true);
 
 		final Customer benutzer = steuerung.getEingeloggterBenutzer();
 		
 		for (int i = 0; i < tracks.length; ++i) {
 			JPanel buttonPanel = new JPanel();
+			buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+			buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+			
 			JTextArea trackText = new JTextArea();
-			trackText.setText(tracks[i].getName() + ", von " + tracks[i].getInterpret());
+			trackText.setBackground(this.getBackground());
+			trackText.setText(tracks[i].getName() + ", " + tracks[i].getInterpret());
 			buttonPanel.add(trackText);
 			
 			JButton empfehlenButton = new JButton("Empfehlen");
 			buttonPanel.add(empfehlenButton);
+			//debug
+			System.out.println(empfehlenButton.getPreferredSize().toString());
 			
 			final Track track = tracks[i];
-			JButton warenkorbButton = new JButton("In den Warenkorb");
-			warenkorbButton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					if(benutzer.getKaufUebersicht().contains(track) == false){
-						if(benutzer.getWarenkorb().contains(track) == false)
-							benutzer.getWarenkorb().add(track);
-					}
-					else{
-						System.out.println("schon gekauft!");
-						HelpWindow schonGekauft = new HelpWindow("iLoveMusic", "Diesen Titel haben Sie bereits gekauft!");
-						schonGekauft.setVisible(true);
-					}
-					
-				}
-			});
-			buttonPanel.add(warenkorbButton);
+			if(!benutzer.getKaufUebersicht().contains(track)){
+				buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+				JButton warenkorbButton = new JButton("In den Warenkorb");
+				warenkorbButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+							if(benutzer.getWarenkorb().contains(track) == false)
+								benutzer.getWarenkorb().add(track);
+							}
+				});
+				buttonPanel.add(warenkorbButton);
+			}
+			else{
+				
+			}
+			buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 			contentPanel.add(buttonPanel);
 		}
 		

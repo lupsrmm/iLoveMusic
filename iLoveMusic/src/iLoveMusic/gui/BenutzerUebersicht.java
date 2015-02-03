@@ -70,6 +70,7 @@ public class BenutzerUebersicht extends JFrame implements ActionListener{
 
 			final String [] menue = {"Benutzerdaten aendern","Playliste erstellen", "Guthaben aufladen", "Warenkorb anzeigen", "Titel herunterladen"};
 			actions = new JList<String>(menue);
+			actions.setBackground(this.getBackground());
 			MouseAdapter mouseListener = new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
