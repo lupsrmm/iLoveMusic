@@ -64,12 +64,19 @@ public class DownloadPanel extends JPanel {
 		downloadButton = new JButton("Download");
 		downloadButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				for(int i = 0; i < titelCheck.length; i++){
-					if(titelCheck[i].isSelected()){
-						HelpWindow download = new HelpWindow("iLoveMusic", "Sie haben die Titel erfolgreich heruntergeladen.");
-						download.setVisible(true);
-						benutzerUebersicht.updateView("download");
+				if(titelCheck != null){
+					for(int i = 0; i < titelCheck.length; i++){
+						if(titelCheck[i].isSelected()){
+							HelpWindow download = new HelpWindow("iLoveMusic", "Sie haben die Titel erfolgreich heruntergeladen.");
+							download.setVisible(true);
+							benutzerUebersicht.updateView("download");
+							break;
+						}
 					}
+				}
+				else{
+					HelpWindow keineTitel = new HelpWindow("iLoveMusic", "Sie haben noch keine Titel gekauft.");
+					keineTitel.setVisible(true);
 				}
 			}
 		});

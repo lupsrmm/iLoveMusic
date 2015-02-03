@@ -29,11 +29,6 @@ public class WarenkorbPanel extends JPanel {
 		
 		Track[] tracks = new Track[steuerung.getEingeloggterBenutzer().getWarenkorb().size()];
 		steuerung.getEingeloggterBenutzer().getWarenkorb().toArray(tracks);
-// debug
-		for (int i = 0; i < tracks.length; ++i) {
-			System.out.println(tracks[i].getName());
-		}
-//
 		
 		JPanel contentPanel = new JPanel();
 		contentPanel.setLayout(new GridLayout(tracks.length+2, 2, 0, 0));
