@@ -119,7 +119,12 @@ public class LoginWindow extends JFrame implements ActionListener {
 			if(steuerung.login(name, passwort)){
 				besucherUebersicht.login();
 			}
+			else{
+				HelpWindow falscheDaten = new HelpWindow("iLoveMusic", "Benutzername oder Passwort inkorrekt.");
+				falscheDaten.setVisible(true);
+			}
 			dispose();
+			
 		}
 	}
 }
