@@ -24,7 +24,7 @@ public class BesucherUebersicht extends JFrame implements ActionListener{
 			
 	private Steuerung steuerung;
 	private JPanel contentPane, infoPanel;
-	private JButton suchenButton, loginButton;
+	private JButton suchenButton, loginButton, registrierenButton;
 	private JTextField suchenTextField;
 			
 	public BesucherUebersicht(Steuerung steuerung) {
@@ -60,6 +60,9 @@ public class BesucherUebersicht extends JFrame implements ActionListener{
 		loginButton = new JButton("Login");
 		loginButton.addActionListener(this);
 		topPanel.add(loginButton);
+		
+		registrierenButton = new JButton("Registrieren");
+		topPanel.add(registrierenButton);
 		
 		
 		infoPanel = new ChartListAusgeloggtPanel(steuerung);

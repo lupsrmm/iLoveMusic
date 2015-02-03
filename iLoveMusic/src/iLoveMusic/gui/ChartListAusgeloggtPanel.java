@@ -26,7 +26,7 @@ public class ChartListAusgeloggtPanel extends JPanel {
 		steuerung.getMusikVerwaltung().getTracks().toArray(tracks);
 		
 		JPanel contentPanel = new JPanel();
-		contentPanel.setLayout(new GridLayout(tracks.length, 2, 0, 0));
+		contentPanel.setLayout(new GridLayout(tracks.length, 1, 0, 0));
 		contentPanel.setAutoscrolls(true);
 		
 		for (int i = 0; i < tracks.length; ++i) {

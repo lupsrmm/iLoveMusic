@@ -6,6 +6,7 @@ import iLoveMusic.steuerung.Steuerung;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -46,11 +47,9 @@ public class ChartListEingeloggtPanel extends JPanel {
 			
 			JButton empfehlenButton = new JButton("Empfehlen");
 			buttonPanel.add(empfehlenButton);
-			//debug
-			System.out.println(empfehlenButton.getPreferredSize().toString());
 			
 			final Track track = tracks[i];
-			if(!benutzer.getKaufUebersicht().contains(track)){
+			if(!benutzer.getKaufUebersicht().contains(track)){ // true, wenn noch nicht gekauft
 				buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 				JButton warenkorbButton = new JButton("In den Warenkorb");
 				warenkorbButton.addActionListener(new ActionListener() {

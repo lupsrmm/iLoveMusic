@@ -89,7 +89,7 @@ public class BenutzerUebersicht extends JFrame implements ActionListener{
 			};
 			actions.addMouseListener(mouseListener);
 			actions.setLayoutOrientation(JList.VERTICAL);
-			actions.setFont(new Font("DejaVu Sans", Font.PLAIN, 13));
+			actions.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
 			actionPanel.add(actions);
 			
 			infoPanel = new ChartListEingeloggtPanel(steuerung);
