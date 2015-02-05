@@ -1,9 +1,20 @@
 package iLoveMusic.benutzerverwaltung;
 
+import java.util.Collections;
+
 import iLoveMusic.musikverwaltung.Titel;
+import iLoveMusic.musikverwaltung.Track;
+import iLoveMusic.musikverwaltung.Tracks;
 
 public class KontoVerwaltung implements KontoVerwaltungInterface{
 	//Datenelemente
+	Tracks trackAngebot;
+	
+	// Konsruktor
+	
+	public KontoVerwaltung(Tracks trackAngebot){
+		this.trackAngebot = trackAngebot;
+	}
 	
 	//Methoden
 	@Override
@@ -17,7 +28,9 @@ public class KontoVerwaltung implements KontoVerwaltungInterface{
 	
 	@Override
 	public double guthabenVerrechnen(Customer benutzer, double guthabenDifferenz){
-		return (benutzer.getGuthaben() + guthabenDifferenz);
+		double neuesGuthaben = (benutzer.getGuthaben() + guthabenDifferenz);
+		benutzer.setGuthaben(neuesGuthaben);
+		return neuesGuthaben;
 	}
 	
 	@Override
@@ -29,8 +42,12 @@ public class KontoVerwaltung implements KontoVerwaltungInterface{
 	public boolean kaufGutschreiben(Customer benutzer){
 		for (Titel tmp : benutzer.getWarenkorb()){
 			benutzer.getKaufUebersicht().add(tmp);
+			Track tempTrack = (Track) tmp;
+			int verkauf = tempTrack.getChartplatzierung();
+			tempTrack.setChartplatzierung(verkauf+1);
 		}
 		benutzer.setWarenkorb(new Warenkorb());
+		Collections.sort(trackAngebot);
 		return true;
 	}	
 }

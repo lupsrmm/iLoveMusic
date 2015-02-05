@@ -1,24 +1,23 @@
 package iLoveMusic.gui;
 
 
-import iLoveMusic.benutzerverwaltung.Customer;
 import iLoveMusic.steuerung.Steuerung;
-
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.JPasswordField;
-import javax.swing.JRootPane;
-import javax.swing.JTextField;
-import javax.swing.border.LineBorder;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JRootPane;
+import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
 
 
 @SuppressWarnings("serial")

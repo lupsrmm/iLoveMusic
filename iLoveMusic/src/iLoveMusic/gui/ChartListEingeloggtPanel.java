@@ -6,7 +6,6 @@ import iLoveMusic.steuerung.Steuerung;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -42,7 +41,7 @@ public class ChartListEingeloggtPanel extends JPanel {
 			
 			JTextArea trackText = new JTextArea();
 			trackText.setBackground(this.getBackground());
-			trackText.setText(tracks[i].getName() + ", " + tracks[i].getInterpret());
+			trackText.setText(String.valueOf(i+1) + ". " + tracks[i].getName() + ", " + tracks[i].getInterpret());
 			buttonPanel.add(trackText);
 			
 			JButton empfehlenButton = new JButton("Empfehlen");
@@ -61,7 +60,7 @@ public class ChartListEingeloggtPanel extends JPanel {
 				buttonPanel.add(warenkorbButton);
 			}
 			else{
-				
+				buttonPanel.add(Box.createRigidArea(new Dimension(145, 0)));
 			}
 			buttonPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 			contentPanel.add(buttonPanel);

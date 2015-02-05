@@ -2,7 +2,6 @@ package iLoveMusic.gui;
 
 import iLoveMusic.benutzerverwaltung.Customer;
 import iLoveMusic.benutzerverwaltung.KontoVerwaltung;
-import iLoveMusic.musikverwaltung.Titel;
 import iLoveMusic.musikverwaltung.Track;
 import iLoveMusic.steuerung.Steuerung;
 
@@ -65,7 +64,8 @@ public class WarenkorbPanel extends JPanel {
 		kaufenButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(kontoVerwaltung.guthabenPruefen(benutzer)){
-					kontoVerwaltung.guthabenVerrechnen(benutzer, benutzer.getWarenkorb().berechnePreis());
+					double kosten = ((-1) * benutzer.getWarenkorb().berechnePreis());
+					kontoVerwaltung.guthabenVerrechnen(benutzer, kosten);
 					kontoVerwaltung.kaufGutschreiben(benutzer);
 					benutzerUebersicht.updateView("download");
 				}

@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.JRootPane;
 import javax.swing.border.LineBorder;
 
 import java.awt.Color;
@@ -45,5 +46,8 @@ public class HelpWindow extends JFrame {
 		});
 		schliessenButton.setAlignmentX(CENTER_ALIGNMENT);
 		contentPane.add(schliessenButton);
+		
+		JRootPane rootPane = this.getRootPane();
+	    rootPane.setDefaultButton(schliessenButton);
 	}
 }

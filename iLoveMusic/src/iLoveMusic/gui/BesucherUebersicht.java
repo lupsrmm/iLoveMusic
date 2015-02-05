@@ -3,13 +3,11 @@ package iLoveMusic.gui;
 
 import iLoveMusic.steuerung.Steuerung;
 
-
 //Awt
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 //Swing
 import javax.swing.JButton;

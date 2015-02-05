@@ -36,7 +36,7 @@ public class ChartListAusgeloggtPanel extends JPanel {
 			
 			JTextArea trackText = new JTextArea();
 			trackText.setBackground(this.getBackground());
-			trackText.setText(tracks[i].getName() + ", von " + tracks[i].getInterpret());
+			trackText.setText(String.valueOf(i+1) + ". " + tracks[i].getName() + ", " + tracks[i].getInterpret());
 			buttonPanel.add(trackText);
 			
 			JButton empfehlenButton = new JButton("Empfehlen");

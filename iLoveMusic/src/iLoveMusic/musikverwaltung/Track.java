@@ -35,8 +35,8 @@ public Track(String name, String interpret, int laenge, double preis, String bem
 		Collator deCollator = Collator.getInstance(Locale.GERMAN);
 		Integer trackVergleich;
 		
-		if(this.getChartplatzierung() > tmp.getChartplatzierung()) return 1;
-		else if(this.getChartplatzierung() < tmp.getChartplatzierung()) return -1;
+		if(this.getChartplatzierung() < tmp.getChartplatzierung()) return 1;
+		else if(this.getChartplatzierung() > tmp.getChartplatzierung()) return -1;
 		else{
 			trackVergleich = deCollator.compare(this.getInterpret(),  tmp.getInterpret());
 			if(trackVergleich == 0)
