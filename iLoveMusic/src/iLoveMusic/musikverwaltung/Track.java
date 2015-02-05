@@ -1,49 +1,27 @@
 package iLoveMusic.musikverwaltung;
 
-import java.text.Collator;
-import java.util.Locale;
-
-
 /**
  * @author Carla Schreiber, Julia Behrendt 
  * @date 20.01.2015
  *
  */
-public class Track extends Titel implements Comparable<Track>{
+public class Track extends Titel{
 	
-	// Datenelemente
-	private int chartplatzierung;
+	/**
+	 * Die Klasse Track repres&auml;ntiert ein Lied im Angebot der Musikplattform.
+	 */
 	
 	// Konstruktor
-public Track(String name, String interpret, int laenge, double preis, String bemerkung, int fsk, int chart){
+	/**
+	 * Es wird ein Objekt der Klasse Track erzeugt und dessen Datenelemente initialisiert.
+	 * @param name ist der Name des Tracks.
+	 * @param interpret ist der Interpret des Tracks.
+	 * @param laenge ist die Länge des Tracks.
+	 * @param preis ist der Preis des Tracks.
+	 * @param bemerkung ist die Bemerkung des Tracks.
+	 * @param fsk ist die Altersfreigabe des Tracks.
+	 */
+	public Track(String name, String interpret, int laenge, double preis, String bemerkung, int fsk){
 		super(name, interpret, bemerkung, laenge, preis, fsk);
-		this.chartplatzierung = chart;
 	}
-	
-	// Getter 
-	public int getChartplatzierung(){
-		return chartplatzierung;
-	}
-	
-	// Setter
-	public void setChartplatzierung(int newChartplatzierung){
-		this.chartplatzierung = newChartplatzierung;
-	}
-
-	@Override
-	public int compareTo(Track tmp) {
-		Collator deCollator = Collator.getInstance(Locale.GERMAN);
-		Integer trackVergleich;
-		
-		if(this.getChartplatzierung() < tmp.getChartplatzierung()) return 1;
-		else if(this.getChartplatzierung() > tmp.getChartplatzierung()) return -1;
-		else{
-			trackVergleich = deCollator.compare(this.getInterpret(),  tmp.getInterpret());
-			if(trackVergleich == 0)
-				trackVergleich = deCollator.compare(this.getName(),  tmp.getName());
-			return trackVergleich;
-		}
-	}
-	
 }
-

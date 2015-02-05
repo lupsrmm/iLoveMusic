@@ -4,7 +4,14 @@ import java.util.Date;
 
 
 public class BenutzerVerwaltung implements BenutzerVerwaltungInterface{
+	/**
+	 * Die BenutzerVerwaltung enthaelt die Methoden zum Erstellen, Editieren und Loeschen von Benutzern (Customer).
+	 */
+	
 	//Datenelemente
+	/**
+	 * Speichert die Benutzerliste, auf der die Benutzer gespeichert sind
+	 */
 	private BenutzerListe benutzerListe;
 	
 	//Methoden

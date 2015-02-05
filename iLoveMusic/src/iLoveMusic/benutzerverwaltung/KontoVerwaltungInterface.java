@@ -20,7 +20,7 @@ public interface KontoVerwaltungInterface {
 	public abstract double guthabenVerrechnen(Customer customer, double guthabenDifferenz);
 	
 	/**
-	 * Fuegt gekaufte Titel (aus dem Warenkorb) der kaufUebersicht des Customers hinzu.
+	 * Fuegt gekaufte Titel (aus dem Warenkorb) der kaufUebersicht des Customers hinzu, erhoeht die Verkaufszahlen der gekauften Titel und sortiert das Angebot erneut..
 	 * @param customer ist der eingeloggte Benutzer.
 	 * @return <code>true</code>, wenn erfolgreich.
 	 */

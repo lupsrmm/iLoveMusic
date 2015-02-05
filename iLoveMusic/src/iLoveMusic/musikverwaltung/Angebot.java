@@ -3,7 +3,11 @@ package iLoveMusic.musikverwaltung;
 import java.util.LinkedList;
 
 @SuppressWarnings("serial")
-public class Angebot extends LinkedList<Titel> {
+
+public abstract class Angebot extends LinkedList<Titel> {
+	/**
+	 * Abstrakte Vorlage der Angebote von Alben und Tracks.
+	 */
 
 	/**
 	 * Methode liefert ein Array mit den Namen aller im Angebot enthaltenen Titel.
@@ -21,7 +25,7 @@ public class Angebot extends LinkedList<Titel> {
 	
 	/**
 	 * Methode liefert ein geschachteltes Array mit den Namen und Interpreten aller im Angebot enthaltenen Titel.
-	 * @return Geschachteltes String-Array mit den Namen aller im Angebot enthaltenen Titel im ersten Feld und deren Interpreten im zweiten Feld..
+	 * @return Geschachteltes String-Array mit den Namen aller im Angebot enthaltenen Titel im ersten Feld und deren Interpreten im zweiten Feld.
 	 */
 	public String[][] titelInterpretArray(){
 		String[][] titelInterpret = new String[this.size()][2];

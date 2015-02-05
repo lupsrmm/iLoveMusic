@@ -12,19 +12,20 @@ import java.util.LinkedList;
 @SuppressWarnings("serial")
 public class Warenkorb extends LinkedList<Titel> {
 		
-		// Konstruktor
-		Warenkorb(){
-			
+	/**
+	 * Der Warenkorb ist eine Liste der Titel, die ein Benutzer zum Kauf ausgew&auml;hlt hat.
+	*/
+		
+	// Methoden
+	/**
+	 * Methode zum berechnen des Gesamtpreises der Titel, die sich im Warenkorb befinden.
+	 * @return Der Gesamtpreis aller Titel, die sich im Warenkorb befinden.
+	 */
+	public double berechnePreis(){
+		double gesamtpreis = 0;
+		for (Titel tmp : this){
+			gesamtpreis = gesamtpreis +  tmp.getPreis();
 		}
-		
-		// Methoden
-		public double berechnePreis(){
-			double gesamtpreis = 0;
-			for (Titel tmp : this){
-				gesamtpreis = gesamtpreis +  tmp.getPreis();
-			}
-			return gesamtpreis;
-		}
-		
-		
+		return gesamtpreis;
+	}		
 }

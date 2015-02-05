@@ -8,10 +8,16 @@ import iLoveMusic.musikverwaltung.Tracks;
 
 public class KontoVerwaltung implements KontoVerwaltungInterface{
 	//Datenelemente
+	/**
+	 * Eine Liste der einzelnen Tracks, die angeboten werden.
+	 */
 	Tracks trackAngebot;
 	
 	// Konsruktor
-	
+	/**
+	 * Erstellt ein Objekt der Klasse KontoVerwaltung und initialisiert dessen Datenfeld trackAngebot.
+	 * @param trackAngebot Die Liste der angebotenen Tracks.
+	 */
 	public KontoVerwaltung(Tracks trackAngebot){
 		this.trackAngebot = trackAngebot;
 	}
@@ -43,8 +49,8 @@ public class KontoVerwaltung implements KontoVerwaltungInterface{
 		for (Titel tmp : benutzer.getWarenkorb()){
 			benutzer.getKaufUebersicht().add(tmp);
 			Track tempTrack = (Track) tmp;
-			int verkauf = tempTrack.getChartplatzierung();
-			tempTrack.setChartplatzierung(verkauf+1);
+			int verkauf = tempTrack.getVerkaufszahlen();
+			tempTrack.setVerkaufszahlen(verkauf+1);
 		}
 		benutzer.setWarenkorb(new Warenkorb());
 		Collections.sort(trackAngebot);

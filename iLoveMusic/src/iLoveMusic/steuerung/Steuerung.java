@@ -5,18 +5,23 @@ import iLoveMusic.benutzerverwaltung.Customer;
 import iLoveMusic.benutzerverwaltung.KontoVerwaltung;
 import iLoveMusic.musikverwaltung.MusikVerwaltung;
 
-public class Steuerung{ 
-private Customer eingeloggterBenutzer;
-private BenutzerVerwaltung benutzerVerwaltung;
-private MusikVerwaltung musikVerwaltung;
-private KontoVerwaltung kontoVerwaltung;
+public class Steuerung implements SteuerungInterface{ 
 	/**
-	 * Methode zum Einloggen.
-	 * @param eMailAdresse Die E-Mailadresse des Benutzers, der sich einloggen will.
-	 * @param passwort Das Passwort des Benutzers, der sich einloggen will.
-	 * @return <code>true</code>, wenn der Login erfolgreich war.
+	 * Steuerung organisiert die verschiedenen Verwaltungen und 
+	 * stellt diese zur Verfügung.
 	 */
-public boolean login(String loginName, String passwort){
+	
+	/** speichert den eingeloggten Benutzer*/
+	private Customer eingeloggterBenutzer;
+	/** speichert die Benutzerverwaltung, mit der gearbeitet werden soll*/
+	private BenutzerVerwaltung benutzerVerwaltung;
+	/** speichert die Musikverwaltung, mit der gearbeitet werden soll*/
+	private MusikVerwaltung musikVerwaltung;
+	/** speichert die Kontoverwaltung, mit der das Konto des eingeloggten Benutzers bearbeitet wird*/
+	private KontoVerwaltung kontoVerwaltung;
+
+	@Override
+	public boolean login(String loginName, String passwort){
         for (Customer temp : benutzerVerwaltung.getBenutzerListe()) {
         	if(loginName.equals(temp.getName())){
         		if (temp.getPasswort().equals(passwort)){
@@ -29,47 +34,49 @@ public boolean login(String loginName, String passwort){
         return false;
 	}
     
- 
-	/**
-	 * Methode zum ausloggen des eingeloggten Benutzers.
-	 * @return <code>true</code>, wenn der Logout erfolgreich war.
-	 */
+	@Override
 	public boolean logout(){
 		eingeloggterBenutzer = null;
 		return true;
-	};
+	}
 	
+	@Override
 	public Customer getEingeloggterBenutzer(){
 		return eingeloggterBenutzer;
-	};
+	}
 	
+	@Override
 	public void setEingeloggterBenutzer(Customer eingeBenutzer){
 		eingeloggterBenutzer = eingeBenutzer;
-	};
+	}
 	
+	@Override
 	public BenutzerVerwaltung getBenutzerVerwaltung(){
 		return benutzerVerwaltung ;
-	};
+	}
 	
+	@Override
 	public void setBenutzerVerwaltung(BenutzerVerwaltung benutzVerwaltung){
 		benutzerVerwaltung = benutzVerwaltung;
-	};
+	}
 	
+	@Override
 	public MusikVerwaltung getMusikVerwaltung(){
 		return musikVerwaltung;
-	};
+	}
 	
+	@Override
 	public void setMusikVerwaltung(MusikVerwaltung musiVerwaltung){
 		musikVerwaltung = musiVerwaltung;
-	};
+	}
 	
+	@Override
 	public KontoVerwaltung getKontoVerwaltung(){
 		return kontoVerwaltung;
-	};
+	}
 	
+	@Override
 	public void setKontoVerwaltung(KontoVerwaltung kontVerwaltung){
 		kontoVerwaltung = kontVerwaltung;
-	};
-
-
+	}
 }

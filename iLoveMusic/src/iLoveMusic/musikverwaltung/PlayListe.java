@@ -4,7 +4,9 @@ import java.util.LinkedList;
 
 @SuppressWarnings("serial")
 public class PlayListe extends LinkedList<Titel> {
-	
+	/**
+	 * Playlisten sind Listen von Titeln, die von Customern zusammengestellt werden k&ouml;nnen.
+	 */
 	/**
 	 * Methode liefert ein Array mit den Namen aller im Angebot enthaltenen Titel.
 	 * @return String-Array mit den Namen aller im Angebot enthaltenen Titel.
