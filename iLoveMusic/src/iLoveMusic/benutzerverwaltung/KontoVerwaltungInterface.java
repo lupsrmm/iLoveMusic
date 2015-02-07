@@ -12,7 +12,7 @@ public interface KontoVerwaltungInterface {
 	public abstract boolean guthabenPruefen(Customer customer);
 	
 	/**
-	 * Erhoeht oder veringert des Guthabens eines Customers um einen bestimmten Wert.
+	 * Erh&ouml;ht oder veringert des Guthabens eines Customers um einen bestimmten Wert.
 	 * @param customer ist der eingeloggte Benutzer.
 	 * @param guthabenDifferenz ist der Wert, der auf das aktuelle Guthaben addiert werden soll (negativ, falls Guthaben abgezogen werden soll).
 	 * @return Das aktualisierte Guthaben.
@@ -20,7 +20,7 @@ public interface KontoVerwaltungInterface {
 	public abstract double guthabenVerrechnen(Customer customer, double guthabenDifferenz);
 	
 	/**
-	 * Fuegt gekaufte Titel (aus dem Warenkorb) der kaufUebersicht des Customers hinzu, erhoeht die Verkaufszahlen der gekauften Titel und sortiert das Angebot erneut..
+	 * F&uuml;gt gekaufte Titel (aus dem Warenkorb) der kaufUebersicht des Customers hinzu, erh&ouml;ht die Verkaufszahlen der gekauften Titel und sortiert das Angebot erneut.
 	 * @param customer ist der eingeloggte Benutzer.
 	 * @return <code>true</code>, wenn erfolgreich.
 	 */
@@ -28,7 +28,7 @@ public interface KontoVerwaltungInterface {
 	
 	/**
 	 * Ermoeglicht den Download gekaufter Titel.
-	 * @param titelListe ist die Liste der Titel, die zum DOwnload bereitgestellt werden sollen.
+	 * @param titelListe ist die Liste der Titel, die zum Download bereitgestellt werden sollen.
 	 * @return <code>true</code>, wenn erfolgreich.
 	 */
 	public abstract boolean download(Titel[] titelListe);

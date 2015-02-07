@@ -16,7 +16,7 @@ public class Album extends Titel{
 	
 	// Konstruktor
 	/**
-	 * Hier wird ein Album initialisiert und mit Werten belegt.
+	 * Erstellt ein Objekt der Klasse Album und initialisiert dessen Datenelemente. Preis, L&auml;nge und FSK werden mit 0 initialisiert.
 	 * @param name ist der Name des Albums.
 	 * @param interpret ist der Interpret des Albums.
 	 * @param bemerkung sind Bemerkungen zu dem Album.
@@ -50,7 +50,7 @@ public class Album extends Titel{
 	
 	// Setter
 	/**
-	 * Die Liste der im Album enthaltenen Titel wird zurückgegeben.
+	 * Die Liste der im Album enthaltenen Titel wird gesetzt.
 	 * @param newTitelliste ist die neue Liste der im Album enthaltenen Titel.
 	 */
 	public void setTitelliste(Track newTitelliste[]){

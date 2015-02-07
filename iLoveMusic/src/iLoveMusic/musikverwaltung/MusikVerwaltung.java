@@ -48,13 +48,9 @@ public class MusikVerwaltung implements MusikVerwaltungInterface{
 		return null;
 	}
 
-	/**
-	 * Noch nicht implementiert.
-	 */
 	@Override
 	public boolean trackHinzufuegen(Track track) {
-		// TODO Auto-generated method stub
-		return false;
+		return tracks.add(track);
 	}
 
 	/**
@@ -67,12 +63,11 @@ public class MusikVerwaltung implements MusikVerwaltungInterface{
 	}
 
 	/**
-	 * Noch nicht implementiert.
+	 * Entfernt einen Titel aus dem Angebot. Nur f&uuml;r Tracks implementiert.
 	 */
 	@Override
 	public boolean titelEntfernen(Titel titel) {
-		// TODO Auto-generated method stub
-		return false;
+		return tracks.remove(titel);
 	}
 
 	/**

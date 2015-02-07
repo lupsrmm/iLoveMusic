@@ -161,10 +161,10 @@ public abstract class Titel implements Comparable<Titel>{
 		this.verkaufszahlen = newVerkaufszahlen;
 	}
 	
-	@Override
 	/**
 	 * Sortiert zun&auml;chst nach Verkaufszahlen, dann nach Interpret und zuletzt nach Namen des Titels.
 	 */
+	@Override
 	public int compareTo(Titel tmp) {
 		Collator deCollator = Collator.getInstance(Locale.GERMAN);
 		Integer titelVergleich;

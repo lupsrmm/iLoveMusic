@@ -3,14 +3,18 @@ package iLoveMusic.gui;
 
 import iLoveMusic.steuerung.Steuerung;
 
+
 //Awt
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+import javax.swing.DefaultComboBoxModel;
 //Swing
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -61,6 +65,11 @@ public class BesucherUebersicht extends JFrame implements ActionListener{
 		
 		registrierenButton = new JButton("Registrieren");
 		topPanel.add(registrierenButton);
+		
+		// Sprachauswahl noch nicht implementiert
+		JComboBox<String> sprachAuswahl = new JComboBox<String>();
+		sprachAuswahl.setModel(new DefaultComboBoxModel<String>(new String[] {"Deutsch", "Englisch"}));
+		topPanel.add(sprachAuswahl);
 		
 		
 		infoPanel = new ChartListAusgeloggtPanel(steuerung);

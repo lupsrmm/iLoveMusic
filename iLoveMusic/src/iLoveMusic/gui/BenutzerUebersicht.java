@@ -3,6 +3,7 @@ package iLoveMusic.gui;
 
 import iLoveMusic.steuerung.Steuerung;
 
+
 //Awt
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -12,8 +13,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+
+import javax.swing.DefaultComboBoxModel;
 //Swing
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -63,6 +67,10 @@ public class BenutzerUebersicht extends JFrame implements ActionListener{
 			logoutButton = new JButton("Logout");
 			logoutButton.addActionListener(this);
 			topPanel.add(logoutButton);
+			
+			JComboBox<String> sprachAuswahl = new JComboBox<String>();
+			sprachAuswahl.setModel(new DefaultComboBoxModel<String>(new String[] {"Deutsch", "Englisch"}));
+			topPanel.add(sprachAuswahl);
 			
 			JPanel actionPanel = new JPanel();
 			actionPanel.setBorder(new LineBorder(Color.BLUE, 1, true));
