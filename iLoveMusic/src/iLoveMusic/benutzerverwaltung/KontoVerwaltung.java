@@ -1,10 +1,9 @@
 package iLoveMusic.benutzerverwaltung;
 
-import java.util.Collections;
-
 import iLoveMusic.musikverwaltung.Titel;
-import iLoveMusic.musikverwaltung.Track;
 import iLoveMusic.musikverwaltung.Tracks;
+
+import java.util.Collections;
 
 public class KontoVerwaltung implements KontoVerwaltungInterface{
 	//Datenelemente
@@ -46,13 +45,16 @@ public class KontoVerwaltung implements KontoVerwaltungInterface{
 	
 	@Override
 	public boolean kaufGutschreiben(Customer benutzer){
+		// Titel aus dem Warenkorb dem Kaeufer zuordnen
 		for (Titel tmp : benutzer.getWarenkorb()){
 			benutzer.getKaufUebersicht().add(tmp);
-			Track tempTrack = (Track) tmp;
-			int verkauf = tempTrack.getVerkaufszahlen();
-			tempTrack.setVerkaufszahlen(verkauf+1);
+			// Verkaufszahlen anpassen
+			int verkauf = tmp.getVerkaufszahlen();
+			tmp.setVerkaufszahlen(verkauf++);
 		}
+		// Warenkorb leeren
 		benutzer.setWarenkorb(new Warenkorb());
+		// Ranking neu sortieren
 		Collections.sort(trackAngebot);
 		return true;
 	}	

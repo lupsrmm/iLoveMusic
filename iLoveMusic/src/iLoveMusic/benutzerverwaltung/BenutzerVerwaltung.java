@@ -25,7 +25,7 @@ public class BenutzerVerwaltung implements BenutzerVerwaltungInterface{
 	
 	@Override
 	public boolean eMailAdresseAendern(Customer benutzer, String altesPasswort, String neueEmailAdresse){
-		if (benutzer.getPasswort().equals(altesPasswort)){
+		if (benutzer.getPasswort().equals(altesPasswort)){ // true, wenn Passwort richtig
 			benutzer.setEMailAdresse(neueEmailAdresse);
 			return true;
 		}else{
@@ -36,7 +36,7 @@ public class BenutzerVerwaltung implements BenutzerVerwaltungInterface{
 	
 	@Override
 	public boolean passwortAendern(Customer benutzer, String altesPasswort, String neuesPasswort){
-		if(benutzer.getPasswort().equals(altesPasswort)){
+		if(benutzer.getPasswort().equals(altesPasswort)){ // true, wenn das alte Passwort richtig eingegeben wurde
 			benutzer.setPasswort(neuesPasswort);
 			return true;
 		}else{

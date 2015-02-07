@@ -22,11 +22,10 @@ public class Steuerung implements SteuerungInterface{
 
 	@Override
 	public boolean login(String loginName, String passwort){
-        for (Customer temp : benutzerVerwaltung.getBenutzerListe()) {
-        	if(loginName.equals(temp.getName())){
-        		if (temp.getPasswort().equals(passwort)){
-        			eingeloggterBenutzer= temp;;
-        			//eingeloggter Benutzer.setLoginSatus(true);
+        for (Customer temp : benutzerVerwaltung.getBenutzerListe()) { // Benutzerliste durchsuchen
+        	if(loginName.equals(temp.getName())){	// true, wenn der Loginname existiert
+        		if (temp.getPasswort().equals(passwort)){ // true, wenn auch das Passwort richtig ist
+        			eingeloggterBenutzer= temp;
         			return true;
         		}
         	}

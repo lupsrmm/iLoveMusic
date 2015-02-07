@@ -36,7 +36,7 @@ public class Album extends Titel{
 				setFSK(titelliste[i].getFSK());
 			}
 		}
-		setPreis(getPreis()*0.8);
+		setPreis(getPreis()*0.8); // 20% Rabatt auf den Gesamtpreis der enthaltenen Tracks
 	}
 	
 	// Getter
