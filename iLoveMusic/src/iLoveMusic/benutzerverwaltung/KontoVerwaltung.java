@@ -50,7 +50,8 @@ public class KontoVerwaltung implements KontoVerwaltungInterface{
 			benutzer.getKaufUebersicht().add(tmp);
 			// Verkaufszahlen anpassen
 			int verkauf = tmp.getVerkaufszahlen();
-			tmp.setVerkaufszahlen(verkauf++);
+			verkauf++;
+			tmp.setVerkaufszahlen(verkauf);
 		}
 		// Warenkorb leeren
 		benutzer.setWarenkorb(new Warenkorb());
